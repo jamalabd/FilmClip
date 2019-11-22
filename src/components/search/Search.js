@@ -1,5 +1,8 @@
-import React, { Fragment, useState } from 'react';
+import React, {Fragment, useState} from 'react';
 import PropTypes from 'prop-types';
+import InputStyle from '../styles/InputStyle';
+import SearchStyle from '../styles/SearchStyle';
+import FormStyle from '../styles/FormStyle';
 
 function Search(props) {
   const [search, setSearch] = useState('');
@@ -17,14 +20,12 @@ function Search(props) {
     clearSearch();
   };
 
-  return (
-    <Fragment>
-      <form className='Search' action=''>
-        <input type='text' value={search} onChange={handleChange} />
-        <input onClick={searchFunction} type='submit' value='SEARCH' />
-      </form>
-    </Fragment>
-  );
+  return (<Fragment>
+    <FormStyle action=''>
+      <SearchStyle type='text' value={search} onChange={handleChange} placeholder='Search'/>
+      <InputStyle onClick={searchFunction} type='submit' value='SEARCH'/>
+    </FormStyle>
+  </Fragment>);
 }
 
 Search.protoTypes = {

@@ -1,18 +1,19 @@
-import React, { Fragment } from 'react';
+import React, {Fragment} from 'react';
+import {MovieStyle, H2Style, ImgStyle, ParagStyle, DiscStyle} from '../styles/MovieStyle';
 
-function Movie({ movie }) {
-  return (
-    <Fragment>
-      <div className='movie'>
-        <h2>{movie.Title}</h2>
-        <div>
-          <img src={movie.Poster} width='200' alt='poster' />
-        </div>
-        <p>{movie.Type}</p>
-        <p>{movie.Year}</p>
+function Movie({movie}) {
+  return (<Fragment>
+    <MovieStyle >
+      <H2Style>{movie.Title}</H2Style>
+      <div>
+        <ImgStyle src={movie.Poster} alt='poster'/>
       </div>
-    </Fragment>
-  );
+      <DiscStyle>
+        <ParagStyle>{movie.Type}</ParagStyle>
+        <ParagStyle>{movie.Year}</ParagStyle>
+      </DiscStyle>
+    </MovieStyle>
+  </Fragment>);
 }
 
 export default Movie;
